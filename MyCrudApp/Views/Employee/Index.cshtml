@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyCrudApp.Models.Employee>
+
+<a asp-action="Create" asp-controller="Employee" class="btn btn-outline-warning">Create</a>
+<table>
+    <tr class="table table-bordered">
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Department</th>
+        <th>Gender</th>
+        <th>IsActive</th>
+    </tr>
+    
+        @foreach (var emp in Model)
+            {
+<tr>
+    <td>@emp.Id</td>
+    <td>@emp.FirstName</td>
+    <td>@emp.LastName</td>
+    <td>@emp.Email</td>
+    <td>@emp.Mobile</td>
+    <td>@emp.Department</td>
+    <td>@emp.Gender</td>
+    <td>@emp.IsActive</td>
+    <td><a asp-action="Edit" asp-route-id="@emp.Id" asp-controller="Employee" class="btn btn-outline-warning">Edit</a></td>
+    <td><a asp-action="Delete" asp-route-id="@emp.Id" asp-controller="Employee" class="btn btn-outline-warning">Delete</a></td>
+</tr>
+            }
+    
+    
+</table>
